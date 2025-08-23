@@ -1,2 +1,0 @@
-/usr/bin/ar qc liblibCompression.a CMakeFiles/libCompression.dir/lz4.c.o CMakeFiles/libCompression.dir/lz4frame.c.o CMakeFiles/libCompression.dir/lz4hc.c.o CMakeFiles/libCompression.dir/xxhash.c.o CMakeFiles/libCompression.dir/lz4dec.cpp.o CMakeFiles/libCompression.dir/lz4enc.cpp.o CMakeFiles/libCompression.dir/LzFind.c.o CMakeFiles/libCompression.dir/LzFindMt.c.o CMakeFiles/libCompression.dir/LzmaDec.c.o CMakeFiles/libCompression.dir/LzmaEnc.c.o CMakeFiles/libCompression.dir/Threads.c.o
-/usr/bin/ranlib liblibCompression.a

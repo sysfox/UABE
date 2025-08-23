@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g -D_DEBUG -Wl,--dependency-file=CMakeFiles/CrnlibWrapLegacy.dir/link.d -shared -Wl,-soname,libCrnlibWrapLegacy.so -o libCrnlibWrapLegacy.so CMakeFiles/CrnlibWrapLegacy.dir/CrnlibWrap.cpp.o  ../libcrnlib-legacy.a

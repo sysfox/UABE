@@ -12,7 +12,23 @@ There are multiple plugins to convert assets from/to common file formats :
 - The Utility plugin can export and import byte arrays and resources (StreamingInfo, StreamedResource) within the View Data editor.
 
 ## Building
-UABE can be built within Visual Studio (Community) 2022 using the Open Folder option (CMake).
+UABE can be built within Visual Studio (Community) 2022 using the Open Folder option (CMake) on Windows, or using CMake directly on macOS and Linux.
+
+### Windows
+Build within Visual Studio (Community) 2022 using the Open Folder option (CMake).
+
+### macOS and Linux
+Use CMake directly:
+```bash
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+```
+
+**Note**: Some features require optional dependencies that may not be available on all platforms:
+- **FMOD**: Required for AudioClip plugin (automatically disabled if not found)
+- **PVRTexTool**: Required for TexToolWrap (automatically disabled if not found)
 
 The non-proprietary dependencies are downloaded and patched during CMake configuration.  
 The proprietary dependencies are optional and can be disabled:
@@ -24,9 +40,11 @@ The CMakeSettings.Example.json shows how a CMakeSettings.json for Visual Studio 
 If the build process cannot find the SDKs, check if the cmake files in CMakeModules look in the correct subfolders. Also note that UABE is still using an old version of FMOD (with plans to substitute it entirely), so it may not work with recent versions.
 
 ### Portability Notes
-- UABE uses plain Win32 for the GUI. The GUI portions are isolated to the UABE_Win32 module, some plugins and the mCtrl dependency. winelib could be an option for a Linux GUI port, however.
-- Compilers other than MSVC++ are not tested with UABE and likely require some code changes.
-- Uses C++20-feature std::format, which is not supported by gcc yet (as of writing this). [fmtlib](https://github.com/fmtlib/fmt) may be a quick drop-in replacement.
+- UABE uses plain Win32 for the GUI. The GUI portions are isolated to the UABE_Win32 module, some plugins and the mCtrl dependency.
+- **macOS support**: A new UABE_macOS module has been added with cross-platform launcher support. The macOS version provides a console-based implementation that can be extended with Cocoa GUI components.
+- **Cross-platform launcher**: The launcher now detects the platform and loads the appropriate module (Win32 on Windows, macOS module on macOS and Linux).
+- Compilers other than MSVC++ are now supported with platform-specific build configurations.
+- Uses C++20-feature std::format on MSVC++, with fallback options for other compilers. [fmtlib](https://github.com/fmtlib/fmt) can be used as a drop-in replacement on non-MSVC platforms.
 
 ## License
 UABE is licensed under the Eclipse Public License, v. 2.0 (EPL 2.0) license (see [Licenses/license.txt](Licenses/license.txt)).  

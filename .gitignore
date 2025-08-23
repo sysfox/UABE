@@ -8,3 +8,14 @@
 /TypeTreeGenerator/.vs
 /TypeTreeGenerator/out
 /Tools/TypeTreeGenerator.pdb
+
+# Build directories
+build/
+.vscode/
+*.o
+*.so
+*.dll
+*.dylib
+*.exe
+*~
+.DS_Store
