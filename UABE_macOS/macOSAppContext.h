@@ -6,7 +6,7 @@
 #include <mutex>
 #include <vector>
 
-class MainWindow;
+class MainWindow_macOS;
 
 enum EmacOSAppContextMsg
 {
@@ -16,6 +16,8 @@ enum EmacOSAppContextMsg
 class macOSAppContext : public AppContext
 {
     std::string baseDir;
+    std::unique_ptr<MainWindow_macOS> mainWindow;
+    bool useGUI;
     
     size_t gcMemoryLimit;
     unsigned int gcMinAge;
@@ -65,8 +67,11 @@ public:
     UABE_macOS_API std::vector<std::string> QueryAssetImportLocation(std::vector<AssetUtilDesc>& assets,
         std::string extension, std::string extensionRegex, std::string extensionFilter);
     
-    UABE_macOS_API macOSAppContext(const std::string &baseDir);
+    UABE_macOS_API macOSAppContext(const std::string &baseDir, bool useGUI = true);
     UABE_macOS_API ~macOSAppContext();
     
     UABE_macOS_API int Run(size_t argc, char **argv);
+    
+    // GUI access
+    MainWindow_macOS* getMainWindow() const { return mainWindow.get(); }
 };

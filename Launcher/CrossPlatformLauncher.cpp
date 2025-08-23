@@ -133,11 +133,23 @@ int main(int argc, char** argv)
 {
     std::string baseDir = getExecutableBaseDir();
     
+    // Parse command line arguments to check for console mode
+    bool useConsoleMode = false;
+    for (int i = 1; i < argc; i++) {
+        if (std::string(argv[i]) == "--console" || std::string(argv[i]) == "-c") {
+            useConsoleMode = true;
+            break;
+        }
+    }
+    
 #ifdef __APPLE__
-    macOSAppContext appContext(baseDir);
+    macOSAppContext appContext(baseDir, !useConsoleMode);
 #else
-    // For other Unix systems, use the same context for now
-    macOSAppContext appContext(baseDir);
+    // For other Unix systems, GUI is not supported yet, use console mode
+    macOSAppContext appContext(baseDir, false);
+    if (!useConsoleMode) {
+        std::cout << "Note: GUI mode not supported on this platform. Using console mode." << std::endl;
+    }
 #endif
     
     return appContext.Run(argc, argv);

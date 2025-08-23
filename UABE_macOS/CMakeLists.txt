@@ -20,6 +20,19 @@ add_library(UABE_macOS SHARED
     api.h
 )
 
+# Add GUI files only for macOS
+if(APPLE)
+    target_sources(UABE_macOS PRIVATE
+        MainWindow_macOS.h
+        MainWindow_macOS.mm
+    )
+    
+    # Enable Objective-C++ for .mm files
+    set_source_files_properties(MainWindow_macOS.mm PROPERTIES 
+        COMPILE_FLAGS "-fobjc-arc"
+    )
+endif()
+
 target_include_directories(UABE_macOS PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_compile_definitions(UABE_macOS PRIVATE UABE_macOS_EXPORTS)
 

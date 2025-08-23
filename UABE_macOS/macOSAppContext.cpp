@@ -1,15 +1,32 @@
 #include "macOSAppContext.h"
+#include "MainWindow_macOS.h"
 #include <assert.h>
 #include <iostream>
 #include <filesystem>
 #include <thread>
 #include <chrono>
 
-macOSAppContext::macOSAppContext(const std::string &baseDir)
-    : baseDir(baseDir), handlingMessages(false), messagePosted(false),
+#ifdef __APPLE__
+#include <Cocoa/Cocoa.h>
+#endif
+
+macOSAppContext::macOSAppContext(const std::string &baseDir, bool useGUI)
+    : baseDir(baseDir), useGUI(useGUI), handlingMessages(false), messagePosted(false),
       gcMemoryLimit(0), gcMinAge(0)
 {
     LoadSettings();
+    
+    // Initialize GUI if requested and we're on macOS
+#ifdef __APPLE__
+    if (useGUI) {
+        mainWindow = std::make_unique<MainWindow_macOS>(this);
+    }
+#else
+    if (useGUI) {
+        std::cout << "Warning: GUI mode requested but not supported on this platform. Using console mode." << std::endl;
+        this->useGUI = false;
+    }
+#endif
 }
 
 macOSAppContext::~macOSAppContext()
@@ -129,28 +146,37 @@ void macOSAppContext::OnChangeBundleEntry(BundleFileContextInfo *pFile, size_t i
 
 bool macOSAppContext::ShowAssetBatchImportDialog(IAssetBatchImportDesc* pDesc, std::string basePath)
 {
-    // For now, return false to indicate dialog not shown
-    // TODO: Implement macOS-specific batch import dialog
-    std::cout << "Batch import dialog requested (not implemented yet)" << std::endl;
-    return false;
+    if (useGUI && mainWindow) {
+        return mainWindow->showAssetBatchImportDialog(pDesc, basePath);
+    } else {
+        // For console mode, return false to indicate dialog not shown
+        std::cout << "Batch import dialog requested (console mode)" << std::endl;
+        return false;
+    }
 }
 
 std::string macOSAppContext::QueryAssetExportLocation(const std::vector<struct AssetUtilDesc>& assets,
     const std::string &extension, const std::string &extensionFilter)
 {
-    // For now, return empty string to indicate cancellation
-    // TODO: Implement macOS-specific file save dialog
-    std::cout << "Export location query (not implemented yet)" << std::endl;
-    return "";
+    if (useGUI && mainWindow) {
+        return mainWindow->queryAssetExportLocation(assets, extension, extensionFilter);
+    } else {
+        // For console mode, return empty string to indicate cancellation
+        std::cout << "Export location query (console mode)" << std::endl;
+        return "";
+    }
 }
 
 std::vector<std::string> macOSAppContext::QueryAssetImportLocation(std::vector<AssetUtilDesc>& assets,
     std::string extension, std::string extensionRegex, std::string extensionFilter)
 {
-    // For now, return empty vector to indicate cancellation
-    // TODO: Implement macOS-specific file open dialog
-    std::cout << "Import location query (not implemented yet)" << std::endl;
-    return {};
+    if (useGUI && mainWindow) {
+        return mainWindow->queryAssetImportLocation(assets, extension, extensionRegex, extensionFilter);
+    } else {
+        // For console mode, return empty vector to indicate cancellation
+        std::cout << "Import location query (console mode)" << std::endl;
+        return {};
+    }
 }
 
 int macOSAppContext::Run(size_t argc, char **argv)
@@ -170,20 +196,41 @@ int macOSAppContext::Run(size_t argc, char **argv)
     
     std::cout << "macOS UABE Context initialized. Base directory: " << baseDir << std::endl;
     
-    // For now, this is a minimal console-based implementation
-    // TODO: Initialize Cocoa application and main window
-    
-    // Basic message loop - in a full implementation, this would be integrated with NSApp
-    while (true)
-    {
-        handleMessages();
+    if (useGUI) {
+#ifdef __APPLE__
+        // Initialize Cocoa application
+        @autoreleasepool {
+            [NSApplication sharedApplication];
+            [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+            
+            // Initialize main window
+            if (mainWindow && mainWindow->initialize()) {
+                mainWindow->show();
+                
+                // Run the main event loop
+                std::cout << "Starting GUI mode..." << std::endl;
+                [NSApp run];
+            } else {
+                std::cerr << "Failed to initialize main window" << std::endl;
+                return -1;
+            }
+        }
+#endif
+    } else {
+        // Console mode - basic message loop
+        std::cout << "Running in console mode..." << std::endl;
         
-        // For demo purposes, exit after a short time
-        // In a real implementation, this would be the main event loop
-        static int counter = 0;
-        if (++counter > 10) break;
-        
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        while (true)
+        {
+            handleMessages();
+            
+            // For demo purposes, exit after a short time
+            // In a real implementation, this would be the main event loop
+            static int counter = 0;
+            if (++counter > 10) break;
+            
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
     }
     
     std::cout << "macOS UABE Context shutting down..." << std::endl;
