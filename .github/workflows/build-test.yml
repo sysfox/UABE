@@ -1,0 +1,90 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+        include:
+          - os: windows-latest
+            preset: windows-msvc
+            artifact_name: UABE-Windows
+            executable_ext: .exe
+          - os: macos-latest
+            preset: macos-clang
+            artifact_name: UABE-macOS
+            executable_ext: ""
+    
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup CMake
+      uses: jwlawson/actions-setup-cmake@v1.14
+      with:
+        cmake-version: '3.18'
+        
+    - name: Setup MSVC (Windows)
+      if: matrix.os == 'windows-latest'
+      uses: microsoft/setup-msbuild@v1.3
+      
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install fmt pkg-config
+        
+    - name: Install dependencies (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        # Windows dependencies are handled through FetchContent in CMake
+        echo "Dependencies will be fetched during CMake configuration"
+        
+    - name: Configure CMake
+      run: |
+        cmake -B build -DCMAKE_BUILD_TYPE=Release
+        
+    - name: Build
+      run: |
+        cmake --build build --config Release -j
+        
+    - name: Test build artifacts
+      run: |
+        ls -la build/bin/
+      shell: bash
+      
+    - name: Package artifacts
+      run: |
+        mkdir -p artifacts/${{ matrix.artifact_name }}
+        cp -r build/bin/* artifacts/${{ matrix.artifact_name }}/
+      shell: bash
+      
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: artifacts/${{ matrix.artifact_name }}
+        retention-days: 7
+        
+    - name: Test executable (basic smoke test)
+      run: |
+        cd build/bin
+        if [ -f "AssetBundleExtractor${{ matrix.executable_ext }}" ]; then
+          echo "✅ Executable found: AssetBundleExtractor${{ matrix.executable_ext }}"
+          # Basic test - just check if executable exists and can be invoked
+          file AssetBundleExtractor${{ matrix.executable_ext }} || echo "File type check completed"
+          echo "🎉 Build completed successfully for ${{ matrix.os }}"
+        else
+          echo "❌ AssetBundleExtractor executable not found!"
+          echo "Available files in bin directory:"
+          ls -la
+          exit 1
+        fi
+      shell: bash

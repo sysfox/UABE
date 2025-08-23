@@ -1,0 +1,141 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., v1.0.0)'
+        required: true
+        type: string
+      prerelease:
+        description: 'Mark as pre-release'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  build-release:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+        include:
+          - os: windows-latest
+            artifact_name: UABE-Windows
+            executable_ext: .exe
+            archive_ext: zip
+          - os: macos-latest
+            artifact_name: UABE-macOS
+            executable_ext: ""
+            archive_ext: tar.gz
+    
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup CMake
+      uses: jwlawson/actions-setup-cmake@v1.14
+      with:
+        cmake-version: '3.18'
+        
+    - name: Setup MSVC (Windows)
+      if: matrix.os == 'windows-latest'
+      uses: microsoft/setup-msbuild@v1.3
+      
+    - name: Install dependencies (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install fmt pkg-config
+        
+    - name: Configure CMake
+      run: |
+        cmake -B build -DCMAKE_BUILD_TYPE=Release
+        
+    - name: Build
+      run: |
+        cmake --build build --config Release -j
+        
+    - name: Package release
+      run: |
+        mkdir -p release/${{ matrix.artifact_name }}-${{ github.event.inputs.version }}
+        cp -r build/bin/* release/${{ matrix.artifact_name }}-${{ github.event.inputs.version }}/
+        
+        # Add version info
+        echo "UABE ${{ github.event.inputs.version }}" > release/${{ matrix.artifact_name }}-${{ github.event.inputs.version }}/VERSION.txt
+        echo "Built on: $(date)" >> release/${{ matrix.artifact_name }}-${{ github.event.inputs.version }}/VERSION.txt
+        echo "Platform: ${{ matrix.os }}" >> release/${{ matrix.artifact_name }}-${{ github.event.inputs.version }}/VERSION.txt
+        echo "Commit: ${{ github.sha }}" >> release/${{ matrix.artifact_name }}-${{ github.event.inputs.version }}/VERSION.txt
+      shell: bash
+        
+    - name: Create archive (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        cd release
+        powershell Compress-Archive -Path "${{ matrix.artifact_name }}-${{ github.event.inputs.version }}/*" -DestinationPath "${{ matrix.artifact_name }}-${{ github.event.inputs.version }}.zip"
+        
+    - name: Create archive (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        cd release
+        tar -czf "${{ matrix.artifact_name }}-${{ github.event.inputs.version }}.tar.gz" "${{ matrix.artifact_name }}-${{ github.event.inputs.version }}"
+        
+    - name: Upload release artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ matrix.artifact_name }}-${{ github.event.inputs.version }}
+        path: release/${{ matrix.artifact_name }}-${{ github.event.inputs.version }}.${{ matrix.archive_ext }}
+        retention-days: 90
+
+  create-release:
+    needs: build-release
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Download all artifacts
+      uses: actions/download-artifact@v3
+      with:
+        path: release-artifacts
+        
+    - name: List artifacts
+      run: |
+        find release-artifacts -type f -name "*"
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ github.event.inputs.version }}
+        name: UABE ${{ github.event.inputs.version }}
+        body: |
+          ## UABE (Asset Bundle Extractor) ${{ github.event.inputs.version }}
+          
+          ### Cross-Platform Release
+          This release includes builds for both Windows and macOS platforms.
+          
+          ### Downloads
+          - **Windows**: `UABE-Windows-${{ github.event.inputs.version }}.zip`
+          - **macOS**: `UABE-macOS-${{ github.event.inputs.version }}.tar.gz`
+          
+          ### Installation
+          1. Download the appropriate archive for your platform
+          2. Extract the archive to your desired location
+          3. Run `AssetBundleExtractor` (or `AssetBundleExtractor.exe` on Windows)
+          
+          ### System Requirements
+          - **Windows**: Windows 7 or later
+          - **macOS**: macOS 10.15 (Catalina) or later
+          
+          ### Changes
+          Built from commit: ${{ github.sha }}
+          
+          For detailed changes, see the commit history.
+        prerelease: ${{ github.event.inputs.prerelease }}
+        draft: false
+        files: |
+          release-artifacts/*/*.zip
+          release-artifacts/*/*.tar.gz
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
