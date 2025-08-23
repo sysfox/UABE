@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpthreads4w.a "CMakeFiles/pthreads4w.dir/fetchcontent/pthreads4w-src/pthread.c.o"
+/usr/bin/ranlib libpthreads4w.a

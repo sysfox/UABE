@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g -D_DEBUG -Wl,--dependency-file=CMakeFiles/CrnlibWrapUnity.dir/link.d -shared -Wl,-soname,libCrnlibWrapUnity.so -o libCrnlibWrapUnity.so CMakeFiles/CrnlibWrapUnity.dir/CrnlibWrap.cpp.o  ../libcrnlib-unity.a

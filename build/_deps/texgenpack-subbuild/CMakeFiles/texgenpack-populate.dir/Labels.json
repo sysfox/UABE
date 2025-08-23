@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/CMakeFiles/texgenpack-populate"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/CMakeFiles/texgenpack-populate.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/CMakeFiles/texgenpack-populate-complete.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-build.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-configure.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-download.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-install.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-patch.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-test.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/texgenpack-subbuild/texgenpack-populate-prefix/src/texgenpack-populate-stamp/texgenpack-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"texgenpack-populate"
+		],
+		"name" : "texgenpack-populate"
+	}
+}

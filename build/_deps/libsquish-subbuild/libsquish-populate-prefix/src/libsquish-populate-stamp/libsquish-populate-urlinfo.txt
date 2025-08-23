@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/usr/local/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/runner/work/UABE/UABE/build/_deps/libsquish-subbuild/libsquish-populate-prefix/src/libsquish-populate-stamp/verify-libsquish-populate.cmake;COMMAND;/usr/local/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/home/runner/work/UABE/UABE/build/_deps/libsquish-subbuild/libsquish-populate-prefix/src/libsquish-populate-stamp/extract-libsquish-populate.cmake
+source_dir=/home/runner/work/UABE/UABE/fetchcontent/libsquish-src
+work_dir=/home/runner/work/UABE/UABE/fetchcontent
+url(s)=/home/runner/work/UABE/UABE/fetchcontent/libsquish-1.15.tgz
+hash=SHA256=628796EEBA608866183A61D080D46967C9DDA6723BC0A3EC52324C85D2147269
+      no_extract=
+

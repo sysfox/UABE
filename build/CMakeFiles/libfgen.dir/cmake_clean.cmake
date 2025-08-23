@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/bitstring.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/bitstring.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/cache.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/cache.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/crossover.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/crossover.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/decode.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/decode.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/error.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/error.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/ffit.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/ffit.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/ga.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/ga.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/gray.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/gray.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/migration.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/migration.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/mutation.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/mutation.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/parameters.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/parameters.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/population.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/population.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/pso.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/pso.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/random.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/random.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/seed.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/seed.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/selection.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/selection.c.o.d"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/steady_state.c.o"
+  "CMakeFiles/libfgen.dir/fetchcontent/libfgen-src/steady_state.c.o.d"
+  "liblibfgen.a"
+  "liblibfgen.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/libfgen.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/astcenc-populate"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/astcenc-populate.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/astcenc-populate-complete.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-build.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-configure.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-download.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-install.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-patch.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-test.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"astcenc-populate"
+		],
+		"name" : "astcenc-populate"
+	}
+}

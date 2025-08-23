@@ -1,0 +1,3 @@
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/astcenc-populate.dir
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/edit_cache.dir
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/rebuild_cache.dir

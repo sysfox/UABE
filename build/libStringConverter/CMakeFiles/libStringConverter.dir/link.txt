@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblibStringConverter.a CMakeFiles/libStringConverter.dir/convert.cpp.o
+/usr/bin/ranlib liblibStringConverter.a

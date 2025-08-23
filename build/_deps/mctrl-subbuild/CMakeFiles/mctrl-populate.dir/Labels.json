@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/CMakeFiles/mctrl-populate"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/CMakeFiles/mctrl-populate.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/CMakeFiles/mctrl-populate-complete.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-build.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-configure.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-download.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-install.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-patch.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-test.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/mctrl-subbuild/mctrl-populate-prefix/src/mctrl-populate-stamp/mctrl-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"mctrl-populate"
+		],
+		"name" : "mctrl-populate"
+	}
+}

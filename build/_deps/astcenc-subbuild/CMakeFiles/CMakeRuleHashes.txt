@@ -1,0 +1,11 @@
+# Hashes of file build rules.
+9c77ee12b951d936f9aad90c35b8a402 CMakeFiles/astcenc-populate
+e7602baf4d0c5a31fbe9eb2e54565c77 CMakeFiles/astcenc-populate-complete
+9ccfad3433b64a7bb48b6b1aebd4eb7d astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-build
+d56d0489366951e14e7f72dd3fb7e6b9 astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-configure
+04a8b1b9c2d4477140858e7ab83b064c astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-download
+4e097799dfc42c72ea154c8b72341c89 astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-install
+a25a227090a2d245c5a03376c4371106 astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-mkdir
+910c214d847314e3eb367059c5025bb1 astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-patch
+aa33c3b45eb737b80acae19349d750b4 astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-test
+1adb5f464e7cf7433e12ceb98c5eea88 astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-update

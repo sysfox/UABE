@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../../libhsluv-c.a "CMakeFiles/hsluv-c.dir/hsluv.c.o"
+/usr/bin/ranlib ../../../../../libhsluv-c.a

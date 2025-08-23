@@ -1,0 +1,14 @@
+# Target labels
+ astcenc-populate
+# Source files and their labels
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/astcenc-populate
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/astcenc-populate.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/CMakeFiles/astcenc-populate-complete.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-build.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-configure.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-download.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-install.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-mkdir.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-patch.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-test.rule
+/home/runner/work/UABE/UABE/build/_deps/astcenc-subbuild/astcenc-populate-prefix/src/astcenc-populate-stamp/astcenc-populate-update.rule

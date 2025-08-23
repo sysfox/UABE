@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/CMakeFiles/crunch-legacy-populate"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/CMakeFiles/crunch-legacy-populate.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/CMakeFiles/crunch-legacy-populate-complete.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-build.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-configure.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-download.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-install.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-patch.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-test.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/crunch-legacy-subbuild/crunch-legacy-populate-prefix/src/crunch-legacy-populate-stamp/crunch-legacy-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"crunch-legacy-populate"
+		],
+		"name" : "crunch-legacy-populate"
+	}
+}

@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/CMakeFiles/ispc_texcomp-populate"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/CMakeFiles/ispc_texcomp-populate.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/CMakeFiles/ispc_texcomp-populate-complete.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-build.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-configure.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-download.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-install.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-patch.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-test.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/ispc_texcomp-subbuild/ispc_texcomp-populate-prefix/src/ispc_texcomp-populate-stamp/ispc_texcomp-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ispc_texcomp-populate"
+		],
+		"name" : "ispc_texcomp-populate"
+	}
+}

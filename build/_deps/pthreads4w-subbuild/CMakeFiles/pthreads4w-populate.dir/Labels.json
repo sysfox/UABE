@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/CMakeFiles/pthreads4w-populate"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/CMakeFiles/pthreads4w-populate.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/CMakeFiles/pthreads4w-populate-complete.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-build.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-configure.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-download.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-install.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-patch.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-test.rule"
+		},
+		{
+			"file" : "/home/runner/work/UABE/UABE/build/_deps/pthreads4w-subbuild/pthreads4w-populate-prefix/src/pthreads4w-populate-stamp/pthreads4w-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"pthreads4w-populate"
+		],
+		"name" : "pthreads4w-populate"
+	}
+}
